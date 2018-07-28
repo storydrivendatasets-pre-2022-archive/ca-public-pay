@@ -1,5 +1,31 @@
-DROP TABLE IF EXISTS "__TABLE_NAME__";
-/* CREATE TABLE __TABLE_NAME__(
-
-   )
-*/
+DROP TABLE IF EXISTS "employee";
+CREATE TABLE employee (
+    "Year" INTEGER,
+    "EmployerType" TEXT,
+    "EmployerName" TEXT,
+    "DepartmentOrSubdivision" BOOLEAN,
+    "Position" TEXT,
+    "ElectedOfficial" BOOLEAN,
+    "Judicial" BOOLEAN,
+    "OtherPositions" BOOLEAN,
+    "MinPositionSalary" DECIMAL,
+    "MaxPositionSalary" DECIMAL,
+    "ReportedBaseWage" BOOLEAN,
+    "RegularPay" DECIMAL,
+    "OvertimePay" DECIMAL,
+    "LumpSumPay" DECIMAL,
+    "OtherPay" DECIMAL,
+    "TotalWages" DECIMAL,
+    "DefinedBenefitPlanContribution" DECIMAL,
+    "EmployeesRetirementCostCovered" BOOLEAN,
+    "DeferredCompensationPlan" BOOLEAN,
+    "HealthDentalVision" DECIMAL,
+    "TotalRetirementAndHealthContribution" DECIMAL,
+    "PensionFormula" TEXT,
+    "EmployerURL" TEXT,
+    "EmployerPopulation" BOOLEAN,
+    "LastUpdatedDate" DATE,
+    "EmployerCounty" TEXT,
+    "SpecialDistrictActivities" BOOLEAN,
+    "IncludesUnfundedLiability" BOOLEAN
+);

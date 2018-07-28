@@ -9,6 +9,9 @@ echo "Year,EmployerType,EmployerName,DepartmentOrSubdivision,Position,ElectedOff
 # We use a grep to remove subsequent headers from each of the individual files
 find data/zips/*.zip -exec unzip -p {} \; \
     | grep -v TotalRetirementAndHealthContribution \
+    | iconv --from-code windows-1252 --to-code utf-8 \
     >> $DEST
+
+    # | csvclean -e windows-1252 \
 
 
