@@ -5,6 +5,9 @@ Cookie version: 2018.07.11 [Attempt at proper Makefile]
 ## Next step
 
 [x] - Import vanilla/bootstrap
+[ ] - Finish bootstrap
+    - Write indexes
+    - Write insert/select into
 [ ] - Import trimmed
 
 ## Wrangling

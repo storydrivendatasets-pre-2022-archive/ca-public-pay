@@ -1,17 +1,9 @@
 #!/usr/bin/env sh
-mkdir -p data/raw
-DEST=data/raw/all-salaries.csv
+mkdir -p data/raw data/zips/build
 
-# Create a new file with the expected headers
-echo "Year,EmployerType,EmployerName,DepartmentOrSubdivision,Position,ElectedOfficial,Judicial,OtherPositions,MinPositionSalary,MaxPositionSalary,ReportedBaseWage,RegularPay,OvertimePay,LumpSumPay,OtherPay,TotalWages,DefinedBenefitPlanContribution,EmployeesRetirementCostCovered,DeferredCompensationPlan,HealthDentalVision,TotalRetirementAndHealthContribution,PensionFormula,EmployerURL,EmployerPopulation,LastUpdatedDate,EmployerCounty,SpecialDistrictActivities,IncludesUnfundedLiability" \
-    > $DEST
+# unzip each file
+find data/zips/*.zip -exec unzip {} -d data/zips/build \;
 
-# We use a grep to remove subsequent headers from each of the individual files
-find data/zips/*.zip -exec unzip -p {} \; \
-    | grep -v TotalRetirementAndHealthContribution \
-    | iconv --from-code windows-1252 --to-code utf-8 \
-    >> $DEST
-
-    # | csvclean -e windows-1252 \
-
+# then combine all CSVs into one CSV with a single header
+csvstack -e windows-1252 data/zips/build/*.csv > data/raw/all-salaries.csv
 
