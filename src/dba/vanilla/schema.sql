@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS "__TABLE_NAME__";
+/* CREATE TABLE __TABLE_NAME__(
+
+   )
+*/
